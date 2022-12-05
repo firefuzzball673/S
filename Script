@@ -57,7 +57,7 @@ CM:NewTextBox("Target Name", "Roblox username not display name", function(txt)
 	Text = txt
 end)
 CM:NewButton("Back stabber", "Combat TP", function()
-While wait(1) do
+while wait(1) do
 if Text ~= " " then
  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players[Text].Character.HumanoidRootPart.Position.X,game.Players[Text].Character.HumanoidRootPart.Position.Y,game.Players[Text].Character.HumanoidRootPart.Position.Z - 2)
 end
@@ -65,10 +65,11 @@ end
 end)
 
 CM:NewButton("ESP", "I see you", function()
+
+for i , p in pairs(game.Players:GetChildren()) do
 local see = Instance.new("Highlight")
 see.FillColor = Color3.fromRGB(174, 12, 255)
 see.OutlineColor = Color3.fromRGB(174, 12, 255)
-for i , p in pairs(game.Players:GetChildren()) do
 	if p.Character:FindFirstChild("Highlight") and game.Players.LocalPlayer.Name ~= p.Name then
 		else
 		see.Parent = p.Character
