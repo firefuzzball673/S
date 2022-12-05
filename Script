@@ -72,5 +72,5 @@ Farmsec:NewButton("ArmorFarm", "User teloports to black belts to pick them up", 
 Farma()
 end)
 local CM = Combat:NewSection("Combat")
-Farmsec:NewButton("Back stabber", "Combat TP", function()
+CM:NewButton("Back stabber", "Combat TP", function()
 end)
