@@ -71,7 +71,7 @@ end)
 Farmsec:NewButton("ArmorFarm", "User teloports to black belts to pick them up", function()
 Farma()
 end)
-local Text = nil	
+local Text	
 local CM = Combat:NewSection("Combat")
 CM:NewTextBox("Target Name", "Roblox username not display name", function(txt)
 	Text = txt
