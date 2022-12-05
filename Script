@@ -36,7 +36,7 @@ local Window = Library.CreateLib("SnowFlake Client", "GrapeTheme")
 local TabPLayer = Window:NewTab("Player") 
 
 local TabFarm = Window:NewTab("AutoFarm") 
-
+local Combat = Window:NewTab("Combat") 
 local Playermenu = TabPLayer:NewSection("Player Menu")
 
 local Farmsec = TabFarm:NewSection("Farm Menu")
@@ -70,4 +70,7 @@ Farmb()
 end)
 Farmsec:NewButton("ArmorFarm", "User teloports to black belts to pick them up", function()
 Farma()
+end)
+local CM = Combat:NewSection("Combat")
+Farmsec:NewButton("Back stabber", "Combat TP", function()
 end)
