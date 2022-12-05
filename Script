@@ -71,6 +71,15 @@ end)
 Farmsec:NewButton("ArmorFarm", "User teloports to black belts to pick them up", function()
 Farma()
 end)
+local Text = nil	
 local CM = Combat:NewSection("Combat")
+CM:NewTextBox("Target Name", "Roblox username not display name", function(txt)
+	Text = txt
+end)
 CM:NewButton("Back stabber", "Combat TP", function()
+While wait(1) do
+if Text ~= " " then
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players[Text].Character.HumanoidRootPart.Position.X,game.Players[Text].Character.HumanoidRootPart.Position.Y,game.Players[Text].Character.HumanoidRootPart.Position.Z - 2)
+end
+end
 end)
