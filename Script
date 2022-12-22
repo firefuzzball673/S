@@ -36,18 +36,18 @@ Farm2()
 
 end)
 Playermenu:NewSlider("Walkspeed", "VRRRRRRRRRRRRRRMMMMMMM", 500, 16, function(s)
-for i , lk in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-	if lk:IsA("Humanoid") then
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-		
-		
-		lk.Died:Connect(function()
-			wait(2)
-			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+local Player = game.Players.LocalPlayer
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+local walkSpeedBeforeDeath
+Player.Character:WaitForChild("Humanoid").Died:Connect(function()
+	print("Died!")
+	walkSpeedBeforeDeath = Player.Character.Humanoid.WalkSpeed
+end)
 
-		end)
-	end
-end
+Player.CharacterAdded:Connect(function()
+	print("Inside CharacterAdded Event!")
+	Player.Character:WaitForChild("Humanoid").WalkSpeed = walkSpeedBeforeDeath
+end)
 end)
 
 Playermenu:NewSlider("Jumpy", "BOING!", 350, 50, function(s) 
