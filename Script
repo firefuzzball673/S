@@ -37,7 +37,9 @@ Farm2()
 end)
 Playermenu:NewSlider("Walkspeed", "VRRRRRRRRRRRRRRMMMMMMM", 500, 16, function(s)
 local Player = game.Players.LocalPlayer
+while wait(1) do
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end
 local walkSpeedBeforeDeath
 Player.Character:WaitForChild("Humanoid").Died:Connect(function()
 	print("Died!")
