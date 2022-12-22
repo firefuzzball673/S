@@ -36,7 +36,18 @@ Farm2()
 
 end)
 Playermenu:NewSlider("Walkspeed", "VRRRRRRRRRRRRRRMMMMMMM", 500, 16, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+for i , lk in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+	if lk:IsA("Humanoid") then
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+		
+		
+		lk.Died:Connect(function()
+			wait(2)
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+		end)
+	end
+end
 end)
 
 Playermenu:NewSlider("Jumpy", "BOING!", 350, 50, function(s) 
