@@ -1,0 +1,75 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local KeyWindow = OrionLib:MakeWindow({Name = "Key", HidePremium = false, SaveConfig = true,})
+
+OrionLib:MakeNotification({
+	Name = "Login",
+	Content = "You have logged in as "..game.Players.LocalPlayer.Name,
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+function Keyf()
+    OrionLib:MakeNotification({
+        Name = "Correct",
+        Content = "Correct Key",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+    })
+end
+function InKey()
+    OrionLib:MakeNotification({
+        Name = "Incorrect",
+        Content = "Incorrect Key",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+    })
+    
+end
+_G.key = "SrFm7hLaphFcgIzM"
+
+_G.Input = "St"
+
+
+local TabKey = KeyWindow:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+TabKey:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+	_G.Input = Value
+	end	  
+})
+
+TabKey:AddButton({
+	Name = "Enter",
+	Callback = function()
+        if _G.key == _G.Input then
+            Keyf()
+            OrionLib:Destroy()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/C0ms/Snow-Flake-Client/main/Script"))()
+               else
+InKey()
+            end
+    
+
+  	end    
+})
+
+TabKey:AddButton({
+    Name = "Get key",
+    Callback = function()
+
+        OrionLib:MakeNotification({
+            Name = "Join us",
+            Content = "https://discord.gg/rs6S6URWzW",
+            Image = "rbxassetid://4483345998",
+            Time = 64
+        })
+
+    end
+})
